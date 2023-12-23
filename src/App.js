@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from './Components/Navbar';
+import Ternaryy from './operators/Ternaryy';
+import Logical from './operators/Logical';
+import Todo from './Todo/Todo';
 
 function App() {
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <Navbar/>
+    <Routes>
+     <Route path="/Todo" Component={Todo}></Route>
+      <Route path="/Ternaryy" Component={Ternaryy}></Route>
+      <Route path="/Logical" Component={Logical}></Route>
+    </Routes>
+    </Router>
   );
 }
+
+
+
 
 export default App;
